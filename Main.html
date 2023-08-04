@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duck's Tools™</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap">
+    <style>
+        body {
+            font-family: "Roboto", Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 20px;
+        }
+
+        .main-section {
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .main-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .download-buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+            gap: 20px;
+        }
+
+        .download-button {
+            padding: 12px 24px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+        }
+
+        .sub-section {
+            margin-top: 40px;
+        }
+
+        .temp-images {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 30px;
+        }
+
+        .temp-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .language-selector {
+            margin-top: 20px;
+        }
+
+        .mode-text {
+            font-size: 18px;
+            right: 0%;
+            top: 0%;
+        }
+
+        .dark-mode-switch {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .dark-mode-switch input {
+            display: none;
+        }
+
+        .dark-mode-switch-label {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .dark-mode-switch-label:before {
+            content: '';
+            position: absolute;
+            top: 1px;
+            left: 1px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+        }
+
+        .dark-mode-switch input:checked + .dark-mode-switch-label {
+            background-color: #007bff;
+        }
+
+        .dark-mode-switch input:checked + .dark-mode-switch-label:before {
+            transform: translateX(20px);
+        }
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .dark-mode header {
+            background-color: #1e90ff;
+        }
+
+        .dark-mode .download-button {
+            background-color: #1e90ff;
+        }
+
+        .dark-mode .dark-mode-switch-label {
+            background-color: #666;
+        }
+
+        .dark-mode .dark-mode-switch-label:before {
+            background-color: #333;
+        }
+
+        @media (max-width: 768px) {
+            .temp-images {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="language-selector">
+        Language:
+        <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <option value="ru">Russian</option>
+        </select>
+    </div>
+
+    <div class="dark-mode-switch">
+        <input type="checkbox" id="darkModeToggle">
+        <label class="dark-mode-switch-label" for="darkModeToggle"></label>
+        <p class="mode-text"></p>
+            <span data-lang="en">Dark/light mode</span>
+            <span data-lang="es">modo/Ligera oscuro</span>
+            <span data-lang="ru">Темный/свет режим</span>
+        </p>
+    </div>
+
+    <header>
+        <h1>Duck's Tools™</h1>
+    </header>
+
+    <div class="main-section">
+        <p class="main-text">
+            <span data-lang="en">Duck's Tools is an archive for all the cheats/scripts in the world (that we have access to)</span>
+            <span data-lang="es">Duck's Tools es un archivo para todos los trucos/scripts del mundo. (a los que tenemos acceso)</span>
+            <span data-lang="ru">Duck's Tools - архив всех читов и скриптов в мире. (к которым у нас есть доступ)  </span>
+        </p>
+
+        <div class="download-buttons">
+            <div class="download-button" onclick="window.open('https://www.mediafire.com/file/xi1fzrtyi2r3dnr/duckys-archive.zip/file')">
+                <span data-lang="en">Download from MediaFire</span>
+                <span data-lang="es">Descargar desde MediaFire</span>
+                <span data-lang="ru">Скачать с MediaFire</span>
+            </div>
+            <div class="download-button" onclick="window.open('https://anonfiles.com/e8Ac845az7/duckys_archive_zip')">
+                <span data-lang="en">Download from Anom Files</span>
+                <span data-lang="es">Descargar desde Anom Files</span>
+                <span data-lang="ru">Скачать с Anom Files</span>
+            </div>
+            <div class="download-button" onclick="window.open('https://mega.nz/file/JvcF0CIJ#UdcSNFad4NQi6_TCfV60r4jduCQIbLm67hbK0AewvAQ')">
+                <span data-lang="en">Download from Mega</span>
+                <span data-lang="es">Descargar desde Mega</span>
+                <span data-lang="ru">Скачать с Mega</span>
+            </div>
+        </div>
+
+        <div class="sub-section">
+            <h2><span data-lang="en">Disclaimer:</span> <span data-lang="es">Descargo de responsabilidad:</span> <span data-lang="ru">Отказ от ответственности:</span></h2>
+            <div class="temp-images">
+                <img class="temp-image" src="https://media.example.com/your-image-1.jpg" alt="Temporary Image 1">
+                <img class="temp-image" src="https://media.example.com/your-image-2.jpg" alt="Temporary Image 2">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const languageSelect = document.getElementById('languageSelect');
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+
+        languageSelect.addEventListener('change', () => {
+            const selectedLanguage = languageSelect.value;
+            console.log('Selected language:', selectedLanguage);
+            document.querySelectorAll('[data-lang]').forEach(element => {
+                element.style.display = 'none';
+            });
+            document.querySelectorAll(`[data-lang="${selectedLanguage}"]`).forEach(element => {
+                element.style.display = 'inline';
+            });
+        });
+
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+            } else {
+                body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+</body>
+
+</html>
+
